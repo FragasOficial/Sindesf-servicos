@@ -1,0 +1,137 @@
+/* ===== Paleta suave ===== */
+:root {
+  --black: #1b1b1b;
+  --soft-orange: #ffb171;  /* laranja suave */
+  --soft-yellow: #ffeab5;  /* amarelo suave */
+  --soft-red: #ff9fa1;     /* vermelho suave */
+  --soft-gray: #fafafa;
+
+  --card-radius: 1.25rem;
+  --shadow: 0 6px 16px rgba(0,0,0,0.06);
+  --transition: all 0.25s ease;
+  --font: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  line-height: 1.6;
+  background: var(--soft-gray);
+  color: var(--black);
+}
+
+/* --- Layout genérico --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* --- Topbar --- */
+.topbar {
+  background: var(--black);
+  color: white;
+}
+.topbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+}
+.topbar h1 {
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+}
+.topbar nav a {
+  color: #ddd;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+.topbar nav a:hover { color: white; }
+
+/* --- Hero --- */
+.hero {
+  background: linear-gradient(145deg, var(--soft-orange) 0%, var(--soft-red) 100%);
+  color: var(--black);
+  text-align: center;
+  padding: 4.5rem 0 3.5rem;
+}
+.hero h2 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  margin-bottom: 0.75rem;
+}
+.hero p { max-width: 32rem; margin: 0 auto 2rem; }
+.btn-cta {
+  background: var(--black);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: var(--transition);
+}
+.btn-cta:hover { transform: translateY(-3px); }
+
+/* --- Cards --- */
+.cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  padding: 3rem 0 4rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1.75rem;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--black);
+  transition: var(--transition);
+}
+.card i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+.card p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Cores individuais */
+.card-orange { background: var(--soft-orange); }
+.card-yellow { background: var(--soft-yellow); }
+.card-red    { background: var(--soft-red);   }
+.card-black  { background: #ededed; } /* contraste leve para o texto preto */
+
+/* Hover / foco */
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* --- Rodapé --- */
+.footer {
+  background: var(--black);
+  color: #bbb;
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+.footer p { margin-bottom: 0.25rem; color: #eee; }
+.footer small { font-size: 0.75rem; }
